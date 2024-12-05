@@ -38,7 +38,7 @@ jobs:
     if: github.ref == 'refs/heads/main'
 
     steps:
-      - name: Downlaod Artifact
+      - name: Download Artifact
         uses: actions/download-artifact@v4
         with: 
           name: production-files
@@ -47,6 +47,6 @@ jobs:
       - name: Deploy to Github Pages
         uses: peaceiris/actions-gh-pages@v3
         with: 
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish-dir: ./dist
 
